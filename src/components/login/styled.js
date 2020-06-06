@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
 align-items: center;
-background-color: #04d361;
+background-color: #272727;
 display: flex;
 height: 5.5vh;
 padding: 5px;
@@ -28,7 +28,7 @@ width: 100%;
 
 export const Login = styled.div`
     align-items: center;
-    background-color: #191622;
+    background-color: #353535;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -37,7 +37,8 @@ export const Login = styled.div`
 
 export const Form = styled.form`
     align-items: center;
-    background-color: #a48fe68f;
+    background-color: #605f638f;
+    box-shadow: 0 0 10px #00fafd;
     display: flex;
     flex-direction: column;
     height: 50vh;
@@ -60,7 +61,7 @@ export const Form = styled.form`
     input:focus {
         outline: 0;
         border: 0;
-        box-shadow: 0px 0px 3px 1px #04d361;
+        box-shadow: 0px 0px 3px 1px #00fafd;
     };
 `;
 
@@ -68,12 +69,12 @@ export const Button = styled.button`
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
 
-    background: #04d361;
+    background: #00fafd;
     border: 1px solid #fff;
     height: 3vh;
     margin-top: 5vh;
     width: 10vw;
     &:focus {
-        outline-color: #2cad66;
+        outline-color: #1d9596;
     }
 `;
