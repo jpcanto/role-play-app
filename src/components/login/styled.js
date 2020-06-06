@@ -6,7 +6,7 @@ background-color: #272727;
 display: flex;
 height: 5.5vh;
 padding: 5px;
-width: 100%;
+width: -webkit-fill-available;
     a {
         color: #fff;
         font-family: Arial, Helvetica, sans-serif;
@@ -76,8 +76,9 @@ export const Line = styled.div`
 export const Button = styled.button`
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
+    text-shadow: .5px .5px .5px;
 
-    background: #00fafd;
+    background: #40babb;
     border: 1px solid #fff;
     border-radius: 5vh;
     box-shadow: 0 0 6px #00fafd;
