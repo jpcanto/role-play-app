@@ -38,7 +38,8 @@ export const Login = styled.div`
 export const Form = styled.form`
     align-items: center;
     background-color: #605f638f;
-    box-shadow: 0 0 10px #00fafd;
+    border-radius: 1vh;
+    box-shadow: 0 0 4px #00fafd;
     display: flex;
     flex-direction: column;
     height: 50vh;
@@ -71,6 +72,8 @@ export const Button = styled.button`
 
     background: #00fafd;
     border: 1px solid #fff;
+    border-radius: 5vh;
+    box-shadow: 0 0 6px #00fafd;
     height: 3vh;
     margin-top: 5vh;
     width: 10vw;
