@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import homeImg from '../../img/Home.jpg';
+import '../../services/loginApi';
 
-import { Nav, Login, Form, Button } from './styled';
+import { Nav, Login, Form, Line, Button } from './styled';
 
 export default function Main() {
     return (
@@ -13,7 +14,10 @@ export default function Main() {
                 <input type="text" />
                 <p>Password: </p>
                 <input type="text" />
-                <Button type="submit">Submit</Button>
+                <Line>
+                    <Button type="submit">Login</Button>
+                    <Button type="submit">Create user</Button>
+                </Line>
             </Form>
         </Login>
     )

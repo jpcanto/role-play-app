@@ -66,6 +66,13 @@ export const Form = styled.form`
     };
 `;
 
+export const Line = styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+`;
+
 export const Button = styled.button`
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
