@@ -1,0 +1,12 @@
+{
+    "PORTUGUESE": {
+        "messages": {
+            "create_user": "Usuário cadastrado com sucesso!"
+        }
+    },
+    "ENGLISH": {
+        "messages": {
+            "create_user": "User successfully registered!"
+        }
+    }
+}
