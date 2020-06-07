@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const Login = styled.div`
+    background-image: ${props => `url(${props.image})`};
+    align-items: center;
+    background-color: #353535;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+`;
+
 export const Nav = styled.nav`
 align-items: center;
 background-color: #272727;
@@ -26,18 +36,9 @@ width: -webkit-fill-available;
     }
 `;
 
-export const Login = styled.div`
-    align-items: center;
-    background-color: #353535;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-`;
-
 export const Form = styled.form`
     align-items: center;
-    background-color: #605f638f;
+    background-color: #444446c9;
     border-radius: 1vh;
     box-shadow: 0 0 4px #00fafd;
     display: flex;
@@ -50,20 +51,28 @@ export const Form = styled.form`
     h2 {
         color: #fff;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 2em;
+        font-size: 2.5rem;
 
+        margin-top: 1.5vh;
         position: absolute;
         top: 0;
     }
     p {
         color: #fff;
         font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
     };
-    input:focus {
-        outline: 0;
-        border: 0;
-        box-shadow: 0px 0px 3px 1px #00fafd;
-    };
+    input {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+
+        height: 2.5vh;
+        &:focus {
+            outline: 0;
+            border: 0;
+            box-shadow: 0px 0px 3px 1px #00fafd;
+        };
+    }
 `;
 
 export const Line = styled.div`
@@ -76,18 +85,26 @@ export const Line = styled.div`
 export const Button = styled.button`
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
     text-shadow: .5px .5px .5px;
 
     background: #40babb;
     border: 1px solid #fff;
     border-radius: 5vh;
     box-shadow: 0 0 6px #00fafd;
-    height: 3vh;
+    cursor: pointer;
+    height: 4vh;
     margin-top: 5vh;
     width: 10vw;
     &[mode="cancel"] {
         background: #bd3636;
         box-shadow: 0 0 6px #d41b1b;
+        &:hover {
+        background-color: #942b2b;
+        }
+    }
+    &:hover {
+        background-color: #338d8e;
     }
     &:focus {
         outline-color: #1d9596;

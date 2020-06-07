@@ -1,6 +1,7 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import {Link, useHistory} from 'react-router-dom';
-import homeImg from '../../img/Home.jpg';
+import { Link, useHistory } from 'react-router-dom';
+import loginImage from '../../img/login.png';
+import Messages from '../../data/messages.json';
 import { Nav, Login, Form, Line, Button } from './styled';
 import APILogin from '../../services/loginApi';
 
@@ -16,10 +17,17 @@ export default function Main() {
         name: '', password: '', email: ''
     });
 
-    const [newUSer, setNewUser] = useState(false);
+    const [newUser, setNewUser] = useState(false);
 
-    async function handleForm() {
-        setNewUser(!newUSer);
+    async function handleForm(ev: FormEvent) {
+        switch (newUser) {
+            case false:
+                setNewUser(!newUser)
+                break;
+
+            default:
+                break;
+        }
     }
 
     async function handleSubmit(ev: FormEvent) {
@@ -27,8 +35,8 @@ export default function Main() {
         const data = userData;
 
         await APILogin.post('users', data);
-        alert('Usuário cadastrado com sucesso!');
-        history.push('/');
+        alert(Messages.PORTUGUESE.messages.create_user);
+        // history.push('/');
     };
 
     async function handleInputChange(ev: ChangeEvent<HTMLInputElement>) {
@@ -38,7 +46,7 @@ export default function Main() {
     };
 
     return (
-        <Login>
+        <Login image={loginImage}>
             <Nav><a>Login</a></Nav>
             <Form onSubmit={handleSubmit}>
                 <h2>Login</h2>
@@ -47,13 +55,13 @@ export default function Main() {
                 <p>Password: </p>
                 <input name="password" type="password" onChange={handleInputChange} />
                 {
-                    newUSer === true ? (
+                    newUser === true ? (
                         <>
                             <p>Email: </p>
                             <input name="email" type="text" onChange={handleInputChange} />
                             <Line>
-                                <Button type="submit" onClick={handleForm}>Login</Button>
                                 <Button type="submit" onClick={handleForm}>Submit user</Button>
+                                <Button type="submit" mode="cancel" onClick={handleForm}>Go back</Button>
                             </Line>
                         </>
                     ) : (
@@ -66,6 +74,6 @@ export default function Main() {
                         )
                 }
             </Form>
-        </Login>
+        </Login >
     )
 }
