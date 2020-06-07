@@ -1,4 +1,5 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
+import {Link, useHistory} from 'react-router-dom';
 import homeImg from '../../img/Home.jpg';
 import { Nav, Login, Form, Line, Button } from './styled';
 import APILogin from '../../services/loginApi';
@@ -10,6 +11,7 @@ export default function Main() {
     //     password: string
     // }
 
+    const history = useHistory();
     const [userData, setUserData] = useState({
         name: '', password: '', email: ''
     });
@@ -26,6 +28,7 @@ export default function Main() {
 
         await APILogin.post('users', data);
         alert('Usuário cadastrado com sucesso!');
+        history.push('/');
     };
 
     async function handleInputChange(ev: ChangeEvent<HTMLInputElement>) {
