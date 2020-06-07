@@ -7,28 +7,26 @@ import APILogin from '../../services/loginApi';
 
 export default function Main() {
 
-    // interface Users {
-    //     name: string,
-    //     password: string
-    // }
+    interface Users {
+        name: string,
+        password: string,
+        email: string
+    }
 
     const history = useHistory();
-    const [userData, setUserData] = useState({
+    const [userData, setUserData] = useState<Users>({
         name: '', password: '', email: ''
     });
 
     const [newUser, setNewUser] = useState(false);
 
-    async function handleForm(ev: FormEvent) {
-        switch (newUser) {
-            case false:
-                setNewUser(!newUser)
-                break;
-
-            default:
-                break;
-        }
-    }
+    async function handleNewUser(ev: FormEvent) {
+        if (!newUser) {
+            setNewUser(!newUser);
+            return;
+        };
+        setNewUser(!newUser);
+    };
 
     async function handleSubmit(ev: FormEvent) {
         ev.preventDefault();
@@ -36,6 +34,14 @@ export default function Main() {
 
         await APILogin.post('users', data);
         alert(Messages.PORTUGUESE.messages.create_user);
+        // history.push('/');
+    };
+
+    async function handleLogin(ev: FormEvent) {
+        ev.preventDefault();
+        const data = Object(userData);
+
+        console.log(await APILogin.get('users', data))
         // history.push('/');
     };
 
@@ -60,15 +66,15 @@ export default function Main() {
                             <p>Email: </p>
                             <input name="email" type="text" onChange={handleInputChange} />
                             <Line>
-                                <Button type="submit" onClick={handleForm}>Submit user</Button>
-                                <Button type="submit" mode="cancel" onClick={handleForm}>Go back</Button>
+                                <Button type="submit" onClick={handleSubmit}>Submit user</Button>
+                                <Button type="submit" mode="cancel" onClick={handleNewUser}>Go back</Button>
                             </Line>
                         </>
                     ) : (
                             <>
                                 <Line>
-                                    <Button type="submit">Login</Button>
-                                    <Button type="submit" onClick={handleForm}>Create user</Button>
+                                    <Button type="submit" onClick={handleLogin}>Login</Button>
+                                    <Button type="submit" onClick={handleNewUser}>Create user</Button>
                                 </Line>
                             </>
                         )
