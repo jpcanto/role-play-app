@@ -85,6 +85,10 @@ export const Button = styled.button`
     height: 3vh;
     margin-top: 5vh;
     width: 10vw;
+    &[mode="cancel"] {
+        background: #bd3636;
+        box-shadow: 0 0 6px #d41b1b;
+    }
     &:focus {
         outline-color: #1d9596;
     }
