@@ -2,11 +2,21 @@
     "PORTUGUESE": {
         "messages": {
             "create_user": "Usuário cadastrado com sucesso!"
+        },
+        "labels": {
+            "userNameLabel": "Nome de usuário: ",
+            "wrongUserNameLabel": "Usuário inexistente!",
+            "emptyLabel": "Campo de preenchimento obrigatório!"
         }
     },
     "ENGLISH": {
         "messages": {
             "create_user": "User successfully registered!"
+        },
+        "labels": {
+            "userNameLabel": "User name: ",
+            "wrongUserNameLabel": "User name not exists!",
+            "emptyLabel": "Required field!"
         }
     }
 }
