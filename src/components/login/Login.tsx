@@ -5,17 +5,17 @@ import Messages from '../../data/messages.json';
 import { Nav, Login, Form, Line, Button } from './styled';
 import APILogin from '../../services/loginApi';
 
-export default function Main() {
+const Main: React.FC = () => {
 
     interface Users {
         name: string,
         password: string,
-        email: string
+        email?: string
     };
 
     const history = useHistory();
     const [userData, setUserData] = useState<Users>(
-        { name: '', password: '', email: '' }
+        { name: '', password: '' }
     );
 
     const [newUser, setNewUser] = useState(false);
@@ -92,4 +92,6 @@ export default function Main() {
             </Form>
         </Login >
     )
-}
+};
+
+export default Main;
