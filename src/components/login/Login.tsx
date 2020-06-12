@@ -34,7 +34,6 @@ const Login: React.FC = () => {
         if (mode === 'create user') {
             await APILogin.post('users', data);
             alert(Messages.PORTUGUESE.messages.create_user);
-            // history.push('/');
             return;
         };
     };
@@ -50,9 +49,9 @@ const Login: React.FC = () => {
 
         await APILogin.get(`users/${userData.name}/${userData.password}`).then(response => {
             setUserData(response.data);
-            console.log(userData);
+            localStorage.setItem('userInfo', JSON.stringify(response.data));
+            history.push('/');
         });
-        // history.push('/');
     };
 
     async function handleInputChange(ev: ChangeEvent<HTMLInputElement>) {
