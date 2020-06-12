@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { variables } from '../../styles/variables';
+const colors = variables.colors;
 
 export const Navigation = styled.nav`
 align-items: center;
-background-color: #272727;
+background-color: ${colors.greyScale02};
 display: flex;
 height: 5.5vh;
 justify-content: space-between;
@@ -10,7 +12,7 @@ padding: 5px;
 width: -webkit-fill-available;
     a {
         color: #fff;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: ${variables.fonts.titleFont};
         font-size: 1rem;
         text-decoration: none;
 
@@ -24,26 +26,26 @@ width: -webkit-fill-available;
         &:hover {
             font-weight: bolder;
 
-            background-color: #e8e8e84f;
+            background-color: ${colors.greyScale01};
         }
     }
 `;
 
 export const User = styled.div`
     margin: 0 2vw 0 auto;
-    background-color: #abfeff;
+    background-color: ${colors.blueScale01};
     background-image: ${props => `url(${props.image})`};
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    border: 1px solid #00fafd;
+    border: 1px solid ${colors.blueScale02};
     border-radius: 5vw;
     cursor: pointer;
     display: block;
     height: 5vh;
     width: 2.5vw;
     &:hover {
-        box-shadow: 0 0 6px #00fafd;
+        box-shadow: 0 0 6px ${colors.blueScale02};
     };
     div {
         height: 100%;
