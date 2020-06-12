@@ -95,7 +95,8 @@ export const Button = styled.button`
     cursor: pointer;
     height: 4vh;
     margin-top: 5vh;
-    width: 10vw;
+    padding: 0 3vw;
+    width: fit-content;
     &[mode="cancel"] {
         background: #bd3636;
         box-shadow: 0 0 6px #d41b1b;
