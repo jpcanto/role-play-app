@@ -1,8 +1,9 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import loginImage from '../../img/login.png';
+import Navigation from '../nav/nav';
 import Messages from '../../data/messages.json';
-import { Nav, Form, LoginForm, Line, Button } from './styled';
+import { Form, LoginForm, Line, Button } from './styled';
 import APILogin from '../../services/loginApi';
 
 const Login: React.FC = () => {
@@ -62,7 +63,7 @@ const Login: React.FC = () => {
 
     return (
         <LoginForm image={loginImage}>
-            <Nav><Link to="/main">Login</Link></Nav>
+            <Navigation />
             <Form onSubmit={(ev: FormEvent) => { handleSubmit(ev, '') }}>
                 <h2>Login</h2>
                 <p>{Messages.ENGLISH.labels.userNameLabel} *</p>
