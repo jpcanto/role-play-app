@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Login = styled.div`
+export const LoginForm = styled.div`
     background-image: ${props => `url(${props.image})`};
     align-items: center;
     background-color: #353535;

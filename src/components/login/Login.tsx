@@ -2,10 +2,10 @@ import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import loginImage from '../../img/login.png';
 import Messages from '../../data/messages.json';
-import { Nav, Login, Form, Line, Button } from './styled';
+import { Nav, Form, LoginForm, Line, Button } from './styled';
 import APILogin from '../../services/loginApi';
 
-const Main: React.FC = () => {
+const Login: React.FC = () => {
 
     interface Users {
         name: string,
@@ -62,7 +62,7 @@ const Main: React.FC = () => {
     };
 
     return (
-        <Login image={loginImage}>
+        <LoginForm image={loginImage}>
             <Nav><a>Login</a></Nav>
             <Form onSubmit={(ev: FormEvent) => { handleSubmit(ev, '') }}>
                 <h2>Login</h2>
@@ -90,8 +90,8 @@ const Main: React.FC = () => {
                         )
                 }
             </Form>
-        </Login >
+        </LoginForm >
     )
 };
 
-export default Main;
+export default Login;
