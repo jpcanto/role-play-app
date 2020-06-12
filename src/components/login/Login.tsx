@@ -11,12 +11,12 @@ export default function Main() {
         name: string,
         password: string,
         email: string
-    }
+    };
 
     const history = useHistory();
-    const [userData, setUserData] = useState<Users>({
-        name: '', password: '', email: ''
-    });
+    const [userData, setUserData] = useState<Users>(
+        { name: '', password: '', email: '' }
+    );
 
     const [newUser, setNewUser] = useState(false);
 
@@ -28,20 +28,30 @@ export default function Main() {
         setNewUser(!newUser);
     };
 
-    async function handleSubmit(ev: FormEvent) {
+    async function handleSubmit(ev: FormEvent, mode: string) {
         ev.preventDefault();
         const data = userData;
-
-        await APILogin.post('users', data);
-        alert(Messages.PORTUGUESE.messages.create_user);
-        // history.push('/');
+        if (mode === 'create user') {
+            await APILogin.post('users', data);
+            alert(Messages.PORTUGUESE.messages.create_user);
+            // history.push('/');
+            return;
+        };
     };
 
     async function handleLogin(ev: FormEvent) {
-        ev.preventDefault();
-        const data = Object(userData);
+        // ev.preventDefault();
+        if (userData.name === '' || userData.name === null) {
+            return;
+        };
+        if (userData.password === '' || userData.password === null) {
+            return;
+        };
 
-        console.log(await APILogin.get('users', data))
+        await APILogin.get(`users/${userData.name}/${userData.password}`).then(response => {
+            setUserData(response.data);
+            console.log(userData);
+        });
         // history.push('/');
     };
 
@@ -54,11 +64,11 @@ export default function Main() {
     return (
         <Login image={loginImage}>
             <Nav><a>Login</a></Nav>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={(ev: FormEvent) => { handleSubmit(ev, '') }}>
                 <h2>Login</h2>
-                <p>User Name: </p>
+                <p>{Messages.ENGLISH.labels.userNameLabel} *</p>
                 <input name="name" type="text" onChange={handleInputChange} />
-                <p>Password: </p>
+                <p>Password: *</p>
                 <input name="password" type="password" onChange={handleInputChange} />
                 {
                     newUser === true ? (
@@ -66,15 +76,15 @@ export default function Main() {
                             <p>Email: </p>
                             <input name="email" type="text" onChange={handleInputChange} />
                             <Line>
-                                <Button type="submit" onClick={handleSubmit}>Submit user</Button>
-                                <Button type="submit" mode="cancel" onClick={handleNewUser}>Go back</Button>
+                                <Button type="submit" onClick={(ev: FormEvent) => { handleSubmit(ev, 'create user') }}>Submit user</Button>
+                                <Button mode="cancel" onClick={handleNewUser}>Go back</Button>
                             </Line>
                         </>
                     ) : (
                             <>
                                 <Line>
                                     <Button type="submit" onClick={handleLogin}>Login</Button>
-                                    <Button type="submit" onClick={handleNewUser}>Create user</Button>
+                                    <Button onClick={handleNewUser}>Create user</Button>
                                 </Line>
                             </>
                         )
