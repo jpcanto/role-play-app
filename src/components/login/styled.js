@@ -21,6 +21,7 @@ width: -webkit-fill-available;
         color: #fff;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1rem;
+        text-decoration: none;
 
         align-items: center;
         cursor: pointer;
