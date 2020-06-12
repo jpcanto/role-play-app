@@ -40,7 +40,7 @@ export default function Main() {
     };
 
     async function handleLogin(ev: FormEvent) {
-        // ev.preventDefault();
+        ev.preventDefault();
         if (userData.name === '' || userData.name === null) {
             return;
         };
