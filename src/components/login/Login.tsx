@@ -63,7 +63,7 @@ const Login: React.FC = () => {
 
     return (
         <LoginForm image={loginImage}>
-            <Nav><a>Login</a></Nav>
+            <Nav><Link to="/main">Login</Link></Nav>
             <Form onSubmit={(ev: FormEvent) => { handleSubmit(ev, '') }}>
                 <h2>Login</h2>
                 <p>{Messages.ENGLISH.labels.userNameLabel} *</p>
