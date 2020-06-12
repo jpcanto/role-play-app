@@ -13,6 +13,8 @@ const Nav: React.FC = () => {
     return (
         <Navigation>
             <Link to="/main">Home</Link>
+            <Link to="/">Tables</Link>
+            <Link to="/">About</Link>
             <User image={userImage}>
                 <div onClick={() => { setHandleUser(!handleUser) }}></div>
                 {handleUser ?

@@ -5,6 +5,7 @@ align-items: center;
 background-color: #272727;
 display: flex;
 height: 5.5vh;
+justify-content: space-between;
 padding: 5px;
 width: -webkit-fill-available;
     a {
@@ -17,6 +18,7 @@ width: -webkit-fill-available;
         cursor: pointer;
         display: flex;
         height: 100%;
+        margin: 0 2vw;
         padding: 1px 5px;
         width: fit-content;
         &:hover {
