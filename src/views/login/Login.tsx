@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import loginImage from '../../img/login.png';
-import Navigation from '../nav/nav';
+import Navigation from '../../components/nav/nav';
 import Messages from '../../data/messages.json';
 import { Form, LoginForm, Line, Button } from './styled';
 import APILogin from '../../services/loginApi';
