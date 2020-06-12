@@ -28,21 +28,30 @@ width: -webkit-fill-available;
 `;
 
 export const User = styled.div`
-    margin-left: auto;
-        div {
-            background-color: #abfeff;
-            background-image: ${props => `url(${props.image})`};
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            border: 1px solid #00fafd;
-            border-radius: 5vw;
-            cursor: pointer;
-            display: block;
-            height: 5vh;
-            width: 2.5vw;
-            &:hover {
-                box-shadow: 0 0 6px #00fafd;
-            }
-        };
+    margin: 0 2vw 0 auto;
+    background-color: #abfeff;
+    background-image: ${props => `url(${props.image})`};
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid #00fafd;
+    border-radius: 5vw;
+    cursor: pointer;
+    display: block;
+    height: 5vh;
+    width: 2.5vw;
+    &:hover {
+        box-shadow: 0 0 6px #00fafd;
+    };
+    div {
+        height: 100%;
+        width: 100%;
+    }
+    select {
+        position: absolute;
+        padding: .5vh 1vw;
+        right: 2vw;
+        top: 6.6vh;
+        width: fit-content;
+    }
 `;
