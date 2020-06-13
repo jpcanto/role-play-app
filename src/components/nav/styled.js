@@ -10,7 +10,7 @@ height: 5.5vh;
 justify-content: space-between;
 padding: 5px;
 width: -webkit-fill-available;
-    a {
+    a, p {
         color: #fff;
         font-family: ${variables.fonts.titleFont};
         font-size: 1rem;

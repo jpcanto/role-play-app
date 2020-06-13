@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import userImage from '../../img/user.png';
 import Messages from '../../data/messages.json';
 import { Navigation, User } from './styled';
+import Dropdown from '../dropdown/dropdown';
 
 const Nav: React.FC = () => {
 
@@ -10,10 +11,13 @@ const Nav: React.FC = () => {
 
     const [handleUser, setHandleUser] = useState(false);
 
+    const dropDownItens = ['Language', 'View mode'];
+
     return (
         <Navigation>
             <Link to="/main">Home</Link>
             <Link to="/">Tables</Link>
+            <Dropdown default='Settings' itens={dropDownItens} />
             <Link to="/">About</Link>
             <User image={userImage}>
                 <div onClick={() => { setHandleUser(!handleUser) }}></div>
