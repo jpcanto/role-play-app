@@ -4,6 +4,7 @@ export const variables = {
     colors: {
         'greyScale01': '#e8e8e84f',
         'greyScale02': '#272727',
+        'greyScale03': '#191919',
         'blueScale01': '#abfeff',
         'blueScale02': '#00fafd',
         'blueScale03': '#338d8e',
