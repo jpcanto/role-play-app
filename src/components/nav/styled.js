@@ -6,7 +6,7 @@ export const Navigation = styled.nav`
 align-items: center;
 background-color: ${colors.greyScale02};
 display: flex;
-height: 5.5vh;
+height: 6.5vh;
 justify-content: space-between;
 padding: 5px;
 width: -webkit-fill-available;

@@ -11,7 +11,20 @@ const Nav: React.FC = () => {
 
     const [handleUser, setHandleUser] = useState(false);
 
-    const dropDownItens = ['Language', 'View mode'];
+    const dropDownItens = [
+        {
+            'title': 'Language',
+            'type': 'dropdown',
+            'children': [
+                { 'text': 'PORTUGUESE' },
+                { 'text': 'ENGLISH' }
+            ]
+        },
+        {
+            'title': 'View mode',
+            'type': 'default'
+        }
+    ];
 
     return (
         <Navigation>
